@@ -45,15 +45,15 @@ jobs:
 
       - name: Backup roles
         if: env.BACKUP_ENABLED == 'true'
-        run: supabase db dump --db-url "$SUPABASE_DB_URL" -f prisma/backups/roles.sql --role-only --linked=false
+        run: supabase db dump --db-url "$SUPABASE_DB_URL" -f prisma/backups/roles.sql --role-only
 
       - name: Backup schema
         if: env.BACKUP_ENABLED == 'true'
-        run: supabase db dump --db-url "$SUPABASE_DB_URL" -f prisma/backups/schema.sql --schema-only --linked=false
+        run: supabase db dump --db-url "$SUPABASE_DB_URL" -f prisma/backups/schema.sql --schema-only
 
       - name: Backup data
         if: env.BACKUP_ENABLED == 'true'
-        run: supabase db dump --db-url "$SUPABASE_DB_URL" -f prisma/backups/data.sql --data-only --linked=false
+        run: supabase db dump --db-url "$SUPABASE_DB_URL" -f prisma/backups/data.sql --data-only
 
       - name: Commit backups
         if: env.BACKUP_ENABLED == 'true'
