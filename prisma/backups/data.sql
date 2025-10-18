@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict bRyn4yYrel5TlXrslr7LyDbCfgjnDykG9r5dieXNq2NdKGFaqsiXxfne9DxtkXg
+-- \restrict loZg0y2GILhhyZYpwaRw27RdwDTiIxRV1OoRGd1TFZCVS7YChd8n4TMTcgyVzRU
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
@@ -147,28 +147,42 @@ INSERT INTO "auth"."one_time_tokens" ("id", "user_id", "token_type", "token_hash
 -- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."courses" ("id", "course_name", "code", "credit_hours", "created_at") VALUES
-	('4325aba5-b796-423f-a0e3-6c4f847983b4', 'Mathematics', 'MATH101', 3, '2025-10-18 13:42:16.499681'),
-	('19cbb453-de1d-4357-92c0-26e5a53a37d6', 'English Language', 'ENG102', 2, '2025-10-18 13:42:16.499681'),
-	('69d8713f-6448-4618-8888-564fc4ac46f9', 'Computer Science', 'CSC103', 4, '2025-10-18 13:42:16.499681');
+
+
+--
+-- Data for Name: departments; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
 
 
 --
 -- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."students" ("id", "full_name", "email", "date_of_birth", "gender", "created_at") VALUES
-	('2158fb64-565b-4ae2-98e0-8c0d9da00d79', 'John Doe', 'john@example.com', '2005-05-15', 'Male', '2025-10-18 13:42:16.499681'),
-	('a40a5734-5de7-4d06-919d-ebfd94f20e93', 'Jane Smith', 'jane@example.com', '2006-07-22', 'Female', '2025-10-18 13:42:16.499681'),
-	('e7467266-8ea3-4a8e-baab-7ab41cf02aa3', 'David Johnson', 'david@example.com', '2004-12-01', 'Male', '2025-10-18 13:42:16.499681');
 
 
 --
 -- Data for Name: enrollments; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."enrollments" ("id", "student_id", "course_id", "enrollment_date") VALUES
-	(1, '2158fb64-565b-4ae2-98e0-8c0d9da00d79', '4325aba5-b796-423f-a0e3-6c4f847983b4', '2025-10-18 13:42:16.499681');
+
+
+--
+-- Data for Name: grade_audit; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: grades; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: teachers; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
 
 
 --
@@ -222,9 +236,23 @@ SELECT pg_catalog.setval('"public"."enrollments_id_seq"', 1, true);
 
 
 --
+-- Name: grade_audit_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"public"."grade_audit_id_seq"', 1, false);
+
+
+--
+-- Name: grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"public"."grades_id_seq"', 1, false);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict bRyn4yYrel5TlXrslr7LyDbCfgjnDykG9r5dieXNq2NdKGFaqsiXxfne9DxtkXg
+-- \unrestrict loZg0y2GILhhyZYpwaRw27RdwDTiIxRV1OoRGd1TFZCVS7YChd8n4TMTcgyVzRU
 
 RESET ALL;
